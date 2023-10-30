@@ -23,8 +23,8 @@ jobs:
 
      #finally build your app with the latest command
       - name: Build and test with Maven
-        working-directory: simple-api-student-main
-        run: mvn clean verify
+        run: mvn clean verify sonar:sonar -Dsonar.projectKey=florianguyot91_TP_Docker -Dsonar.organization=florianguyot91 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api-student-main/pom.xml
+
       # define job to build and publish docker image
 
 # define job to build and publish docker image
