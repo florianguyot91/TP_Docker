@@ -50,14 +50,14 @@ jobs:
       - name: Build image and push database
         uses: docker/build-push-action@v3
         with:
-          context: ./database
+          context: ./TP_Docker
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build image and push httpd
         uses: docker/build-push-action@v3
         with:
-          context: ./httpd
+          context: ./TP_Docker_HTTP
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
