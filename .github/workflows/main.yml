@@ -48,19 +48,19 @@ jobs:
           context: ./simple-api-student-main
           # Note: tags has to be all lower-case
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-backend
-          push: ${{ github.ref == 'refs/heads/main' }}
+          push: ${{ github.ref == 'refs/heads/master' }}
 
       - name: Build image and push database
         uses: docker/build-push-action@v3
         with:
           context: ./TP_Docker
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-database
-          push: ${{ github.ref == 'refs/heads/main' }}
+          push: ${{ github.ref == 'refs/heads/master' }}
 
       - name: Build image and push httpd
         uses: docker/build-push-action@v3
         with:
           context: ./TP_Docker_HTTP
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-frontend
-          push: ${{ github.ref == 'refs/heads/main' }}
+          push: ${{ github.ref == 'refs/heads/master' }}
 
